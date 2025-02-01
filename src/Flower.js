@@ -10,6 +10,7 @@ export class Flower {
 
     // Flower parts (13 elements)
     const parts = [
+      this.createPart("pot"),
       this.createPart("stem", "stem"),
       this.createPart("flower-center", "center"),
       ...this.createPetals(),
