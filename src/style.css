@@ -39,3 +39,109 @@ body {
     opacity: 0;
   }
 }
+
+/* FLORAL DESIGN */
+
+.flower-container {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: sway 5s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg);
+  }
+}
+
+.flower-part {
+  position: absolute;
+  transform-origin: bottom center;
+}
+
+/* Flower center */
+.flower-center {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(#4d2c1d, #36200e);
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s ease-in-out infinite;
+  left: -30px;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Petals */
+
+.petal {
+  width: 45px;
+  height: 90px;
+  background: radial-gradient(#ffeb3b, #ffc107);
+  border-radius: 50% 50% 40% 40%;
+  animation: petal-drift 6s ease-in-out infinite;
+  transform-origin: bottom center;
+  top: -100px;
+  left: -20px;
+}
+
+@keyframes petal-drift {
+  0%,
+  100% {
+    transform: rotate(var(--base-angle)) translateY(-20px) rotate(-5deg);
+  }
+  50% {
+    transform: rotate(var(--base-angle)) translateY(0px) rotate(5deg);
+  }
+}
+
+/* Leaves */
+
+.leaf {
+  width: 40px;
+  height: 30px;
+  background: #388e3c;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom center;
+  animation: leaf-drift 8s ease-in-out infinite;
+}
+
+@keyframes leaf-drift {
+  0%,
+  100% {
+    transform: rotate(var(--rotate)) translateY(5px) scale(0.95);
+  }
+  50% {
+    transform: rotate(var(--rotate)) translateY(5px) scale(1.05);
+  }
+}
+
+/* Stem */
+
+.stem {
+  width: 15px;
+  height: 300px;
+  background: linear-gradient(to right, #388e3c, #2e7d32);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
