@@ -1,3 +1,7 @@
+import { Flower } from "./Flower";
+
+new Flower("flower-root");
+
 const container = document.getElementById("fireflies-container");
 
 // Firefly configuration
