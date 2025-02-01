@@ -145,3 +145,31 @@ body {
   transform: translateX(-50%);
   border-radius: 10px;
 }
+
+/* Pot */
+.pot {
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(30deg, #8d6e63 30%, #6d4c41 70%);
+    position: absolute;
+    left: 50%;
+    bottom: -350px;
+    transform: translateX(-50%);
+    border-radius: 10px 10px 20px 20px;
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.2),
+        inset 0 -10px 20px rgba(0,0,0,0.2);
+    z-index: 0;
+}
+
+.pot::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 25px;
+    background: linear-gradient(to right, #a1887f 20%, #795548 80%);
+    border-radius: 5px;
+}
