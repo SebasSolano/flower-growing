@@ -1,6 +1,10 @@
 import { Flower } from "./Flower";
+import { MessageManager } from "./Messages.js";
 
 new Flower("flower-root");
+document.getElementById("flower-root").classList.add("hidden");
+
+new MessageManager();
 
 const container = document.getElementById("fireflies-container");
 
