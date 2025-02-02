@@ -279,7 +279,7 @@ body {
 }
 
 .seed {
-  left: 49%;
+  left: 50%;
   transform: translateX(-50%);
   width: 20px;
   height: 20px;
@@ -302,7 +302,7 @@ body {
 .cultivate-button {
   position: absolute;
   top: 40%;
-  right: 46%;
+  left: 47%;
   padding: 12px 30px;
   font-family: cursive;
   font-size: 2rem;
@@ -329,7 +329,7 @@ body {
 .water-button {
   position: absolute;
   top: 20%;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   padding: 15px 40px;
   font-size: 1.5rem;
