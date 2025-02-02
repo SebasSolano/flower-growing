@@ -1,4 +1,5 @@
 import { Flower } from "./Flower";
+import { GrowthManager } from "./GrowthManager.js";
 import { MessageManager } from "./Messages.js";
 
 new Flower("flower-root");
@@ -77,3 +78,7 @@ setInterval(() => {
     }
   }
 }, 5000);
+
+if (localStorage.getItem("hasPlanted")) {
+  new GrowthManager()
+}

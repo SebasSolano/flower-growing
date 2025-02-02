@@ -147,11 +147,11 @@ body {
 }
 
 .plant-part {
-    display: none;
+  display: none;
 }
 
 #flower-root:not(.hidden) .pot {
-    display: block !important;
+  display: block !important;
 }
 
 /* Pot */
@@ -161,7 +161,7 @@ body {
   background: linear-gradient(30deg, #8d6e63 30%, #6d4c41 70%);
   position: absolute;
   left: 50%;
-  bottom: -250px !important;
+  bottom: -350px !important;
   transform: translateX(-50%);
   border-radius: 10px 10px 20px 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
@@ -302,7 +302,7 @@ body {
 .cultivate-button {
   position: absolute;
   top: 40%;
-  right: 47.5%;
+  right: 46%;
   padding: 12px 30px;
   font-family: cursive;
   font-size: 2rem;
@@ -323,4 +323,90 @@ body {
 
 .pot.grow {
   animation: potGrow 1s ease-out;
+}
+
+/* Botón de riego */
+.water-button {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  background: rgba(33, 150, 243, 0.9);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  outline: none;
+  animation: float 3s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+}
+
+.water-effect {
+  width: 40px;
+  height: 40px;
+  left: 48%;
+  top: 70%;
+  transform: translateX(-50%);
+  position: absolute;
+  animation: seedDrop 1.5s ease-in-out;
+  border-radius: 50%;
+  background: rgba(33, 150, 243, 0.5);
+  box-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
+}
+
+/* Animación de corazón */
+.heart-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  animation: heartFloat 2s ease-in-out;
+  color: #ff3860;
+  text-shadow: 0 0 20px rgba(255, 56, 96, 0.5);
+  opacity: 0;
+  z-index: 9999;
+}
+
+@keyframes heartFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -150%) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -200%) scale(0.5);
+  }
+}
+
+/* Estilos para la etapa final */
+.final-flower {
+  animation: glowFlower 3s ease-in-out infinite;
+}
+
+@keyframes glowFlower {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
 }
