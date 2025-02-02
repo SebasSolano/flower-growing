@@ -8,18 +8,24 @@ export class Flower {
     const flower = document.createElement("div");
     flower.className = "flower-container";
 
-    // Flower parts (13 elements)
-    const parts = [
-      this.createPart("pot"),
-      this.createPart("stem", "stem"),
-      this.createPart("flower-center", "center"),
-      ...this.createPetals(),
-      ...this.createLeaves(),
+
+    const pot = this.createPart("pot");
+    flower.appendChild(pot);
+
+
+    const plantParts = [
+        this.createPart("stem", "stem"),
+        this.createPart("flower-center", "center"),
+        ...this.createPetals(),
+        ...this.createLeaves(),
     ];
 
-    parts.forEach((part) => flower.appendChild(part));
+
+    plantParts.forEach(part => part.classList.add("plant-part"));
+
+    plantParts.forEach((part) => flower.appendChild(part));
     this.container.appendChild(flower);
-  }
+}
 
   createPart(className, type) {
     const part = document.createElement("div");

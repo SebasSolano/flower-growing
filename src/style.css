@@ -146,30 +146,181 @@ body {
   border-radius: 10px;
 }
 
+.plant-part {
+    display: none;
+}
+
+#flower-root:not(.hidden) .pot {
+    display: block !important;
+}
+
 /* Pot */
 .pot {
-    width: 120px;
-    height: 80px;
-    background: linear-gradient(30deg, #8d6e63 30%, #6d4c41 70%);
-    position: absolute;
-    left: 50%;
-    bottom: -350px;
-    transform: translateX(-50%);
-    border-radius: 10px 10px 20px 20px;
-    box-shadow:
-        0 15px 30px rgba(0,0,0,0.2),
-        inset 0 -10px 20px rgba(0,0,0,0.2);
-    z-index: 0;
+  width: 120px;
+  height: 80px;
+  background: linear-gradient(30deg, #8d6e63 30%, #6d4c41 70%);
+  position: absolute;
+  left: 50%;
+  bottom: -250px !important;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 20px 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+    inset 0 -10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  transition: all 0.5s ease;
 }
 
 .pot::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 25px;
-    background: linear-gradient(to right, #a1887f 20%, #795548 80%);
-    border-radius: 5px;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 25px;
+  background: linear-gradient(to right, #a1887f 20%, #795548 80%);
+  border-radius: 5px;
+}
+
+/* Message animations */
+.message-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: messageEntrance 1s ease-out forwards;
+  max-width: 80%;
+  min-width: 600px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+@keyframes messageEntrance {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.message-exit {
+  animation: messageExit 0.8s ease-in forwards;
+}
+
+@keyframes messageExit {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
+
+.next-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 12px 30px;
+  font-family: "Pacifico", cursive;
+  font-size: 1.7rem;
+  background: none;
+  border: none !important;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: buttonEntrance 0.5s ease-out 3s forwards;
+}
+.next-button:hover {
+  transition: all 0.5s ease-out;
+  transform: scale(1.05);
+  font-size: 2rem;
+}
+
+@keyframes buttonEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Seed animation */
+@keyframes seedDrop {
+  0% {
+    transform: translateY(-50vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0) rotate(720deg);
+  }
+}
+
+.seed {
+  left: 49%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #4d2c1d;
+  position: absolute;
+  border-radius: 50%;
+  animation: seedDrop 1.5s ease-in-out;
+}
+
+/* Animation pot */
+@keyframes potGrow {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.cultivate-button {
+  position: absolute;
+  top: 40%;
+  right: 47.5%;
+  padding: 12px 30px;
+  font-family: cursive;
+  font-size: 2rem;
+  background: none;
+  border: 1px solid #ffc107;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  outline: none;
+  animation: buttonEntrance 0.5s ease-out 1s forwards;
+}
+.cultivate-button:hover {
+  transition: all 0.5s ease-out;
+  transform: scale(1.05);
+}
+
+.pot.grow {
+  animation: potGrow 1s ease-out;
 }
