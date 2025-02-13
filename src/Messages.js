@@ -16,6 +16,7 @@ const FINAL_MESSAGES = [
   "Cada pétalo representa un momento especial juntos",
   "El corazón en el centro simboliza todo lo que siento por ti",
   "Gracias por ser mi luz y mi razón para sonreír",
+  "No te pido ser mi San Valentín porque sé que lo serás siempre!",
   "Te amo mucho mi princesita sofia💖",
   "Mi manca",
   "Mi rara",
